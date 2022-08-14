@@ -1,5 +1,6 @@
 struct stat;
 struct rtcdate;
+struct sysinfo;
 
 // system calls
 int fork(void);
@@ -23,8 +24,14 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
+<<<<<<< HEAD
 int sigalarm(int ticks, void (*handler)());     // lab4-3
 int sigreturn(void);    // lab4-3
+=======
+#ifdef LAB_NET
+int connect(uint32, uint16, uint16);
+#endif
+>>>>>>> 773d70bb9c12e6e39932fce95228ced8b0fd58df
 
 // ulib.c
 int stat(const char*, struct stat*);
@@ -41,4 +48,9 @@ void* malloc(uint);
 void free(void*);
 int atoi(const char*);
 int memcmp(const void *, const void *, uint);
+<<<<<<< HEAD
 void *memcpy(void *, const void *, uint);
+=======
+void *memcpy(void *, const void *, uint);
+int statistics(void*, int);
+>>>>>>> 773d70bb9c12e6e39932fce95228ced8b0fd58df
