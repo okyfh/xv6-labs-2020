@@ -24,4 +24,8 @@ main(int argc, char *argv[])
   }
   exec(nargv[0], nargv);
   exit(0);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82

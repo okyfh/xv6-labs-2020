@@ -149,8 +149,17 @@ UPROGS=\
 	$U/_grind\
 	$U/_wc\
 	$U/_zombie\
+<<<<<<< HEAD
 	$U/_trace\
 	$U/_sysinfotest\
+=======
+	$U/_sleep\
+	$U/_pingpong\
+	$U/_primes\
+	$U/_find\
+	$U/_xargs\
+	$U/_trace\
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
 
 
 

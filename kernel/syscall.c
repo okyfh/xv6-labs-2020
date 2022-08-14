@@ -105,7 +105,10 @@ extern uint64 sys_wait(void);
 extern uint64 sys_write(void);
 extern uint64 sys_uptime(void);
 extern uint64 sys_trace(void);//lab2-1
+<<<<<<< HEAD
 extern uint64 sys_sysinfo(void);//lab2-2
+=======
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
 
 static uint64 (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -129,8 +132,12 @@ static uint64 (*syscalls[])(void) = {
 [SYS_link]    sys_link,
 [SYS_mkdir]   sys_mkdir,
 [SYS_close]   sys_close,
+<<<<<<< HEAD
 [SYS_trace]   sys_trace,//lab2-1
 [SYS_sysinfo] sys_sysinfo,//lab2-2
+=======
+[SYS_trace]   sys_trace, //lab2-1
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
 };
 
 static char *syscalls_name[] = {
@@ -156,8 +163,12 @@ static char *syscalls_name[] = {
         "link",
         "mkdir",
         "close",
+<<<<<<< HEAD
         "trace",
         "sysinfo"  //lab2-2
+=======
+        "trace"//lab2-1
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
 };
 
 void

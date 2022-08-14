@@ -20,5 +20,11 @@
 #define SYS_link   19
 #define SYS_mkdir  20
 #define SYS_close  21
+<<<<<<< HEAD
 #define SYS_trace  22   //lab2-1
 #define SYS_sysinfo  23 //lab2-2
+=======
+#define SYS_trace  22  //lab2-1
+
+
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82

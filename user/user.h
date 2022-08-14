@@ -24,8 +24,12 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
+<<<<<<< HEAD
 int trace(int); //lab2-1
 int sysinfo(struct sysinfo*);  //lab2-2
+=======
+int trace(int);  //lab2-1
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
 
 // ulib.c
 int stat(const char*, struct stat*);
