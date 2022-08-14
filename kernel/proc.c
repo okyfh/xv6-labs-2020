@@ -274,7 +274,7 @@ fork(void)
     return -1;
   }
   np->sz = p->sz;
-
+  np->mask = p->mask;   //cp trace mask from parent to child
   np->parent = p;
 
   // copy saved user registers.
@@ -464,7 +464,11 @@ scheduler(void)
     // Avoid deadlock by ensuring that devices can interrupt.
     intr_on();
     
+<<<<<<< HEAD
     int nproc = 0;
+=======
+    int found = 0;
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
     for(p = proc; p < &proc[NPROC]; p++) {
       acquire(&p->lock);
       if(p->state != UNUSED) {
@@ -481,10 +485,16 @@ scheduler(void)
         // Process is done running for now.
         // It should have changed its p->state before coming back.
         c->proc = 0;
+
+        found = 1;
       }
       release(&p->lock);
     }
+<<<<<<< HEAD
     if(nproc <= 2) {   // only init and sh exist
+=======
+    if(found == 0) {
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
       intr_on();
       asm volatile("wfi");
     }
