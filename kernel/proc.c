@@ -277,7 +277,7 @@ fork(void)
     return -1;
   }
   np->sz = p->sz;
-
+  np->mask = p->mask;   //cp trace mask from parent to child
   np->parent = p;
 
   // copy saved user registers.
@@ -486,14 +486,20 @@ scheduler(void)
       }
       release(&p->lock);
     }
+<<<<<<< HEAD
 #if !defined (LAB_FS)
+=======
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
     if(found == 0) {
       intr_on();
       asm volatile("wfi");
     }
+<<<<<<< HEAD
 #else
     ;
 #endif
+=======
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
   }
 }
 

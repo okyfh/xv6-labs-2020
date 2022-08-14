@@ -25,6 +25,7 @@ char* sbrk(int);
 int sleep(int);
 int uptime(void);
 <<<<<<< HEAD
+<<<<<<< HEAD
 int sigalarm(int ticks, void (*handler)());     // lab4-3
 int sigreturn(void);    // lab4-3
 =======
@@ -32,6 +33,9 @@ int sigreturn(void);    // lab4-3
 int connect(uint32, uint16, uint16);
 #endif
 >>>>>>> 773d70bb9c12e6e39932fce95228ced8b0fd58df
+=======
+int trace(int);  //lab2-1
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
 
 // ulib.c
 int stat(const char*, struct stat*);

@@ -7,6 +7,19 @@
 #include "spinlock.h"
 #include "proc.h"
 
+//将trace的参数mask作为一个变量存到结构体struct proc中
+uint64 
+sys_trace(void) {
+    int mask;
+    // 获取整数类型的系统调用参数
+    if (argint(0, &mask) < 0) {
+        return -1;
+    }
+    // 存入proc 结构体的 mask 变量中
+    myproc()->mask = mask;
+    return 0;
+}
+
 uint64
 sys_exit(void)
 {

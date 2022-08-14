@@ -35,7 +35,11 @@ OBJS = \
   $K/sysfile.o \
   $K/kernelvec.o \
   $K/plic.o \
-  $K/virtio_disk.o
+  $K/virtio_disk.o \
+
+ifeq ($(LAB),pgtbl)
+OBJS += $K/vmcopyin.o
+endif
 
 ifeq ($(LAB),pgtbl)
 OBJS += \
@@ -88,10 +92,16 @@ CFLAGS = -Wall -Werror -O -fno-omit-frame-pointer -ggdb
 
 ifdef LAB
 LABUPPER = $(shell echo $(LAB) | tr a-z A-Z)
+<<<<<<< HEAD
 XCFLAGS += -DSOL_$(LABUPPER) -DLAB_$(LABUPPER)
 endif
 
 CFLAGS += $(XCFLAGS)
+=======
+CFLAGS += -DSOL_$(LABUPPER)
+endif
+
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
 CFLAGS += -MD
 CFLAGS += -mcmodel=medany
 CFLAGS += -ffreestanding -fno-common -nostdlib -mno-relax
@@ -175,6 +185,7 @@ UPROGS=\
 	$U/_grind\
 	$U/_wc\
 	$U/_zombie\
+<<<<<<< HEAD
 	$U/_alarmtest\
 
 
@@ -236,12 +247,47 @@ UPROGS += \
 	$U/_nettests
 endif
 
+=======
+	$U/_sleep\
+	$U/_pingpong\
+	$U/_primes\
+	$U/_find\
+	$U/_xargs\
+	$U/_trace\
+
+
+ifeq ($(LAB),syscall)
+UPROGS += \
+	$U/_trace\
+	$U/_sysinfotest
+endif
+
+ifeq ($(LAB),trap)
+UPROGS += \
+	$U/_call\
+	$U/_alarmtest
+endif
+
+ifeq ($(LAB),lazy)
+UPROGS += \
+	$U/_lazytests
+endif
+
+ifeq ($(LAB),cow)
+UPROGS += \
+	$U/_cowtest
+endif
+
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
 UEXTRA=
 ifeq ($(LAB),util)
 	UEXTRA += user/xargstest.sh
 endif
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
 fs.img: mkfs/mkfs README $(UEXTRA) $(UPROGS)
 	mkfs/mkfs fs.img README $(UEXTRA) $(UPROGS)
 
@@ -289,6 +335,7 @@ qemu-gdb: $K/kernel .gdbinit fs.img
 	@echo "*** Now run 'gdb' in another window." 1>&2
 	$(QEMU) $(QEMUOPTS) -S $(QEMUGDB)
 
+<<<<<<< HEAD
 ifeq ($(LAB),net)
 # try to generate a unique port for the echo server
 SERVERPORT = $(shell expr `id -u` % 5000 + 25099)
@@ -300,6 +347,8 @@ ping:
 	python3 ping.py $(FWDPORT)
 endif
 
+=======
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
 ##
 ##  FOR testing lab grading script
 ##
