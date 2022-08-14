@@ -24,9 +24,13 @@ int getpid(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
+<<<<<<< HEAD
 #ifdef LAB_NET
 int connect(uint32, uint16, uint16);
 #endif
+=======
+int trace(int);  //lab2-1
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
 
 // ulib.c
 int stat(const char*, struct stat*);

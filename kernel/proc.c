@@ -355,6 +355,7 @@ fork(void)
     return -1;
   }
   np->sz = p->sz;
+<<<<<<< HEAD
   // copy user page table to kernel page table - lab3-3
   if(u2kvmcopy(np->pagetable, np->kpagetable, 0, np->sz) < 0) {
     freeproc(np);
@@ -362,6 +363,9 @@ fork(void)
     return -1;
   }
 
+=======
+  np->mask = p->mask;   //cp trace mask from parent to child
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
   np->parent = p;
 
   // copy saved user registers.
@@ -576,14 +580,20 @@ scheduler(void)
       }
       release(&p->lock);
     }
+<<<<<<< HEAD
 #if !defined (LAB_FS)
+=======
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
     if(found == 0) {
       intr_on();
       asm volatile("wfi");
     }
+<<<<<<< HEAD
 #else
     ;
 #endif
+=======
+>>>>>>> 141a1490ee9c2723a6b6a4ade579d00dd9023a82
   }
 }
 
